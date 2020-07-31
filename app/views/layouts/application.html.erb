@@ -21,7 +21,48 @@
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
-    
+
+    <nav class="navbar is-info">
+      <div class="navbar-brand">
+        <%= link_to root_path, class: "navbar-item" do %>
+          <h1 class="title is-2" style="font-family: Georgia, serif;">PhotoApp</h1>
+        <% end %>
+
+      <% if user_signed_in? %>
+        <div class="nevbaritem">
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <%= link_to "ユーザー一覧", users_path, class: "button is-success"%>
+              </p>
+              <p class="control">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-danger" %>
+              </p>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <%= link_to "ユーザー一覧", users_path, class: "button is-success"%>
+              </p>
+              <p class="control">
+                <%= link_to "ログイン", new_user_session_path, class: "button is-success"%>
+              </p>
+              <p class="control">
+                <%= link_to "新規登録", new_user_registration_path, class:"button is-success" %>
+              </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    </nav>
     <%= yield %>
   </body>
 </html>
+
