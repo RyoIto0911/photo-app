@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,7 +13,7 @@
   <body>
     <% if flash[:notice] %>
       <div class="notification is-link">
-       <p class="notice"><%= notice %></p>
+        <p class="notice"><%= notice %></p>
       </div>
     <% end %>
 
@@ -29,13 +30,20 @@
         <% end %>
 
       <% if user_signed_in? %>
-        <div class="nevbaritem">
-        </div>
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
+                <%= link_to "投稿一覧", photos_path, class: "button is-success" %>
+              </p>
+              <p class="control">
+                <%= link_to "新規投稿", new_photo_path, class: "button is-success" %>
+              </p>
+              <p class="control">
                 <%= link_to "ユーザー一覧", users_path, class: "button is-success"%>
+              </p>
+              <p class="control">
+                <%= link_to "マイページ", user_path(current_user), class: "button is-warning" %>
               </p>
               <p class="control">
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-danger" %>
@@ -48,13 +56,16 @@
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
+                <%= link_to "投稿一覧", photos_path, class: "button is-success" %>
+              </p>
+              <p class="control">
                 <%= link_to "ユーザー一覧", users_path, class: "button is-success"%>
               </p>
               <p class="control">
-                <%= link_to "ログイン", new_user_session_path, class: "button is-success"%>
+                <%= link_to "ログイン", new_user_session_path, class: "button is-warning"%>
               </p>
               <p class="control">
-                <%= link_to "新規登録", new_user_registration_path, class:"button is-success" %>
+                <%= link_to "新規登録", new_user_registration_path, class:"button is-link" %>
               </p>
             </div>
           </div>
@@ -65,4 +76,3 @@
     <%= yield %>
   </body>
 </html>
-

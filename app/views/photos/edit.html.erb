@@ -1,2 +1,42 @@
-<h1>Photos#edit</h1>
-<p>Find me in app/views/photos/edit.html.erb</p>
+<section class="hero is-success">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        投稿編集
+      </h1>
+    </div>
+  </div>
+</section>
+
+<% if @photo.errors.any? %>
+  <div class="notification is-danger">
+    <h2><%= pluralize(@photo.errors.count, "エラー") %> もう一度、確認してください</h2>
+    <ul>
+      <% @photo.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <%= form_for @photo do |f| %>
+          <div class="field">
+            <%= f.label :body, "情報", class: "label" %>
+            <%= f.text_area :body, class: "textarea" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :image, "写真", class: "label" %>
+            <%= f.attachment_field :image, class: "input" %>
+          </div>
+
+          <%= f.submit '投稿', class: "button is-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
