@@ -2,7 +2,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        ページ詳細
+        Post details
       </h1>
     </div>
   </div>
@@ -22,14 +22,14 @@
             <div class="content">
               <table class="table is-narrow">
                 <tr>
-                  <th>情報</th>
+                  <th>Information</th>
                 </tr>
                 <tr>
                   <td><%= simple_format @photo.body %></td>
                 </tr>
               </table>
               <% if @photo.user.id == current_user.id %>
-                <%= link_to "編集画面へ", edit_photo_path(@photo), class: "button is-success" %>
+                <%= link_to "Edit", edit_photo_path(@photo), class: "button is-success" %>
               <% end %>
             </div>
           </div>
@@ -50,7 +50,7 @@
             <span class="panel-icon">
               <i class="fas fa-user" aria-hidden="true"></i>
             </span>
-            <%= @photo.user.username %> さんのページへ
+            go to <%= @photo.user.username %> page
           <% end %>
         </article>
       </div>

@@ -2,7 +2,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        新規投稿
+        New Post
       </h1>
     </div>
   </div>
@@ -10,7 +10,7 @@
 
 <% if @photo.errors.any? %>
   <div class="notification is-danger">
-    <h2><%= pluralize(@photo.errors.count, "エラー") %> もう一度、確認してください </h2>
+    <h2><%= pluralize(@photo.errors.count, "error") %> Check again </h2>
     <ul>
       <% @photo.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -26,16 +26,16 @@
         <%= form_for @photo do |f| %>
 
           <div class="field">
-            <%= f.label :body, "コメント", class: "label" %>
+            <%= f.label :body, "Comment", class: "label" %>
             <%= f.text_area :body, class: "textarea" %>
           </div>
 
           <div class="field">
-            <%= f.label :image, "写真", class: "label" %>
+            <%= f.label :image, "Photo", class: "label" %>
             <%= f.attachment_field :image, class: "input" %>
           </div>
 
-          <%= f.submit '投稿', class: "button is-success" %>
+          <%= f.submit 'Post', class: "button is-success" %>
         <% end %>
       </div>
     </div>

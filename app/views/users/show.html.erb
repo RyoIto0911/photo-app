@@ -2,7 +2,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        マイページ
+        My page
       </h1>
     </div>
   </div>
@@ -29,7 +29,7 @@
                   <%= @user.email %>
                 </td>
                 <td>
-                    <%= link_to "編集", edit_user_path(@user), class: "button is-primary" %>
+                    <%= link_to "Edit", edit_user_path(@user), class: "button is-primary" %>
                 </td>
                 <% end %>
               </tr>
@@ -68,26 +68,26 @@
                     <span class="panel-icon">
                       <i class="fas fa-book" aria-hidden="true"></i>
                     </span>
-                    この投稿を見る
+                    Show
                   <% end %>
                   <% if @user.id == current_user.id %>
                     <%= link_to edit_photo_path(photo), class: "panel-block" do %>
                       <span class="panel-icon">
                         <i class="fas fa-edit"></i>
                       </span>
-                      この投稿を編集する
+                      Edit
                     <% end %>
-                    <%= link_to photo_path(photo), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
+                    <%= link_to photo_path(photo), method: :delete, data: {confirm: "Delete??"}, class: "panel-block" do %>
                       <span class="panel-icon">
                         <i class="fas fa-trash"></i>
                       </span>
-                      この投稿を削除する
+                      Delete
                     <% end %>
                   <% end %>
                 </div>
               </div>
               <div class="content">
-                <time><%= photo.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+                <time><%= photo.updated_at.strftime("%Y-%m-%d %H:%M") %></time>Update
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PhotoApp</title>
+    <title>Photo App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -26,7 +26,7 @@
     <nav class="navbar is-info">
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item" do %>
-          <h1 class="title is-2" style="font-family: Georgia, serif;">PhotoApp</h1>
+          <h1 class="title is-2" style="font-family: Georgia, serif;">Photo App</h1>
         <% end %>
 
       <% if user_signed_in? %>
@@ -34,19 +34,19 @@
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
-                <%= link_to "投稿一覧", photos_path, class: "button is-success" %>
+                <%= link_to "Post list", photos_path, class: "button is-success" %>
               </p>
               <p class="control">
-                <%= link_to "新規投稿", new_photo_path, class: "button is-success" %>
+                <%= link_to "New post", new_photo_path, class: "button is-success" %>
               </p>
               <p class="control">
-                <%= link_to "ユーザー一覧", users_path, class: "button is-success"%>
+                <%= link_to "User list", users_path, class: "button is-success"%>
               </p>
               <p class="control">
-                <%= link_to "マイページ", user_path(current_user), class: "button is-warning" %>
+                <%= link_to "My page", user_path(current_user), class: "button is-warning" %>
               </p>
               <p class="control">
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-danger" %>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button is-danger" %>
               </p>
             </div>
           </div>
@@ -56,16 +56,16 @@
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
-                <%= link_to "投稿一覧", photos_path, class: "button is-success" %>
+                <%= link_to "Post list", photos_path, class: "button is-success" %>
               </p>
               <p class="control">
-                <%= link_to "ユーザー一覧", users_path, class: "button is-success"%>
+                <%= link_to "User list", users_path, class: "button is-success"%>
               </p>
               <p class="control">
-                <%= link_to "ログイン", new_user_session_path, class: "button is-warning"%>
+                <%= link_to "Log in", new_user_session_path, class: "button is-warning"%>
               </p>
               <p class="control">
-                <%= link_to "新規登録", new_user_registration_path, class:"button is-link" %>
+                <%= link_to "New account", new_user_registration_path, class:"button is-link" %>
               </p>
             </div>
           </div>

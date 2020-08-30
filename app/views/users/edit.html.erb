@@ -2,7 +2,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        ユーザー編集
+        User editing
       </h1>
     </div>
   </div>
@@ -10,7 +10,7 @@
 
 <% if @user.errors.any? %>
   <div class="notification is-danger">
-    <h2><%= pluralize(@user.errors.count, "エラー") %> もう一度、確認してください </h2>
+    <h2><%= pluralize(@user.errors.count, "error") %> Check again </h2>
     <ul>
       <% @user.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -25,26 +25,26 @@
       <div class="column is-6">
         <%= form_for @user do |f| %>
           <div class="field">
-            <%= f.label :username, "ユーザー名", class: "label" %>
+            <%= f.label :username, "user name", class: "label" %>
             <%= f.text_field :username, class: "input" %>
           </div>
 
           <div class="field">
-            <%= f.label :email, "メールアドレス", class: "label" %>
+            <%= f.label :email, "e-mail", class: "label" %>
             <%= f.email_field :email, class: "input" %>
           </div>
 
           <div class="field">
-            <%= f.label :profile, "プロフィール", class: "label" %>
+            <%= f.label :profile, "profile", class: "label" %>
             <%= f.text_area :profile, class: "textarea" %>
           </div>
 
           <div class="field">
-            <%= f.label :profile_image, "プロフィール画像", class: "label" %>
+            <%= f.label :profile_image, "profile image", class: "label" %>
             <%= f.attachment_field :profile_image, class: "input" %>
           </div>
 
-          <%= f.submit "更新", class: "button is-success" %>
+          <%= f.submit "Update", class: "button is-success" %>
         <% end %>
       </div>
     </div>
