@@ -5,20 +5,19 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* 
 
-* System dependencies
+* 
+* 
 
-* Configuration
+* 
 
-* Database creation
+* n
 
-* Database initialization
+* Hte
 
-* How to run the test suite
+* Serrch engines, etc.)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* Dections
 
 * ...
