@@ -9,4 +9,11 @@
 # アプリ説明
 
 * このアプリにはログイン機能があります。
- ![画像の説明](app/assets/images/readme_img/log_in.png "hero")
+* この画面でログインや新規登録ができます。
+ ![ホーム画面](app/assets/images/readme_img/log_in.png "log_in")
+
+* 個人のプロフィールが見ることができます。
+* 一人の投稿一覧とプロフィールを見ることができます。
+ ![プロフィール画面](app/assets/images/readme_img/profile.png "profile")
+
+* 
