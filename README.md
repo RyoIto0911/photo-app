@@ -9,4 +9,4 @@
 # アプリ説明
 
 * このアプリにはログイン機能があります。
- ![alt text](http://18.180.250.228//img.png)
+ ![画像の説明](app/assets/images/readme_img/log_in.png "hero")
